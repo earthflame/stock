@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>地焰图表</title>
+    <link rel="stylesheet" href="/statics/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/statics/bootstrap-3.3.7-dist/css/bootstrap-theme.css">    
+    <link rel="/statics/bootstrap-submenu-2.0.4/dist/css/bootstrap-submenu.min.css">
+    <script src="/statics/js/jquery-3.2.1.js"></script>
+    <script src="/statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/statics/bootstrap-hover-dropdown-master/bootstrap-hover-dropdown.js"></script> 
+    <script src="/statics/bootstrap-submenu-2.0.4/dist/js/bootstrap-submenu.min.js"></script>
+    <script src="/statics/js/csrf.js"></script>
+    <script src="/statics/js/echarts.min.js"></script>
+    <style type="text/css">
+		html
+		{
+		  padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+		  
+		}
+		body 
+		{   text-align: left;
+			direction: ltr;
+		}
+		tbody
+		{
+		  display: table-row-group;
+          vertical-align: middle;
+		}
+		div
+		{
+		 display: block;
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		tr
+		{
+			display: table-row;
+            vertical-align: inherit;
+		}
+		td
+		{
+			width: 78.4px;
+			height: 20px;
+		}
+        .my-navbar {background-color: black;font-size: 20px;opacity:0.8;}
+        .dropdown-menu {font-size: 20px;}
+        .dropdown-submenu {position: relative;}
+        .mymenu {position:absolute;left:100%;top:0;}
+        .divlastsearch {background-color:white;opacity:1;}
+        .arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 2px;
+            vertical-align: middle;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid;
+               }
+        #searchinput{
+            position: relative;
+        }
+		#search {
+            display: block;
+            font-size:12px;
+            width: 480px;
+            position: absolute;
+            top:100%;
+            visibility: hidden;
+            border:1px solid #000;
+            text-align: left;
+        }
+        #search td {
+            line-height:27px;
+        }
+        #search .second
+        {   padding:0 14px;
+            width:137px;
+        }
+        #search .third {
+            min-width:137px;
+            max-width: 360px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #search .fourth {
+            color:#B2B2B2;
+            text-align: left;
+            white-space: nowrap;
+            width: auto;
+        }
+        .groupheader {
+            font-weight: bold;
+            font-size:12px;
+            padding:0 14px;
+            line-height: 32px;
+            background-color: #F7F7F7;
+            color:#6C6C6C;
+        }
+        section {
+           position: absolute;
+            top:10%;
+            left:10%;
+        }
+		#summary {
+			position: absolute;
+            top:18%;
+            right:3%;
+		}
+		.overviewDataTable
+		{
+			width: 608px;
+		}
+		.overviewDataTable div
+		{  
+            
+			border-bottom: 1px solid #dadada;
+            padding-bottom: 2px;
+            margin-top: 1px;
+            width: 202px;
+            overflow: hidden;
+            margin-left: 50px;
+		}
+		.first
+		{
+		  margin-left: 0;
+		}
+		.inlineblock
+		{
+		  display: inline-block;
+		}
+		.float_lang_base1
+		{
+			float: left;
+		}
+		.float_lang_base2
+		{
+			float: right;
+		}
+	    .doubleLineSeperator
+		{  
+			border-top: 3px solid #2F4F4F;
+            height: 0;
+            width: auto;
+            margin: 27px 0 26px;
+		}
+		.doubleLineSeperator2
+		{  
+			border-top: 2px solid 	#dadada;
+            height: 0;
+            width: auto;
+            margin: 5px 0 10px;
+		}
+		.newBtn
+		{
+			position: relative;
+            display: inline-block;
+            outline: 0;
+            font-size: 11px;
+            line-height: 14px;
+            font-weight: bold;
+			margin-right: -5px;
+		}
+		.newBtn.LightGray
+		{
+			color: #333;
+			background-color: #F6F6F6;
+			background-image: -webkit-linear-gradient(top, #ccc, #E4E4E4);
+			border: 1px solid #8C8C8C;
+			-webkit-box-shadow: inset 0 0 0 1px #EBEBEB;
+		}
+		.newBtn.toggleButton
+		{   cursor: pointer;
+			padding: 3px 15px 4px;
+            border-right: 0;
+		}
+		.newBtn.toggleButton.last
+		{
+		    border-right: 1px solid #8C8C8C;
+		}
+		.newBtn.toggleButton.toggled
+		{   color: #FFF;
+			cursor: default;
+			box-shadow: inset 0 1px 2px #808080;
+			background: none;
+            background-color: #999999;
+            filter: none;
+		}
+		.clear
+		{
+			clear: both;
+		}
+		.genTbl
+		{
+			border-spacing: 0;
+            border-collapse: separate;
+            width: 100%;
+		}
+		
+		.alignBottom
+		{
+			    vertical-align: bottom !important;
+		}
+		.reportTbl
+		{
+			border: 1px solid #bababa;
+            border-bottom-width: 1px;
+            margin-top: 16px;
+		}
+		.genTbl tr
+		{
+			transition: background 0.1s;
+		}
+		.genTbl th
+		{   font-weight: bold;
+			height: 24px;
+			white-space: nowrap;
+		}
+		.genTbl td
+		{
+		    text-align: right;
+		}
+		.reportTbl th
+		{
+			text-align: right;
+            color: #333;
+            padding: 7px 10px 8px 0;
+		}
+		.reportTbl td:first-child
+		{
+			text-align: left;
+		}
+		.reportTbl .openTr
+		{
+			background-color: #DFE9F2 !important;
+            cursor: pointer;
+		}
+		.bold {
+            font-weight: bold;
+           }
+		.arial_11
+		{   font-family: Arial,Helvetica,"Nimbus Sans  L",sans-serif;
+			font-size: 11px;
+		}
+		.noBold
+		{
+			font-weight: normal !importan;
+		}
+        </style>
+    </head>
+    <nav class="navbar navbar-fixed-top navbar-inverse my-navbar" role="navigation" id="nav">
+       <div class="navbr-header">
+            <a class="navbar-brand"  style="font-size:1.6em;">home</a>
+            </div>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav"> 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">股票
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a>标准普尔指数</a></li>
+                        <li><a>英国富时100指数</a></li>
+                        <li><a>日经225指数</a></li>
+                        <li><a>德国DAX指数</a></li>
+                        <li><a>更多</a></li>
+                    </ul>   
+                 </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle dropright" data-toggle="dropdown" data-hover="dropdown" >商品
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">贵金属
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="dropdown-menu mymenu">
+                             <li><a>黄金</a></li>
+                             <li><a>白银</a></li>
+                             <li><a>钯金</a></li>
+                             <li><a>铂金</a></li>
+                        </ul>
+                    </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">贱金属 <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu mymenu">
+                        <li><a>铜</a></li>
+                        <li><a>铝</a></li>
+                        <li><a>铁矿</a></li>
+                        <li><a>更多</a></li>
+                    </ul>
+                    </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">农产品
+                    <span class="arrow"></span>
+                    </a>
+                     <ul class="dropdown-menu mymenu">
+                        <li><a>玉米</a></li>
+                        <li><a>小麦</a></li>
+                        <li><a>糖</a></li>
+                         <li><a>大豆</a></li>
+                         <li><a>咖啡</a></li>
+                         <li><a>可可</a></li>
+                         <li><a>更多</a></li>
+                    </ul>
+                    </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">能源
+                    <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a>布伦特原油</a></li>
+                        <li><a>天然气</a></li>
+                        <li><a>更多</a></li>
+                    </ul>
+                    </li>
+                <li><a>更多</a></li>
+                </ul>
+                </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                债券
+                </a>
+                <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                    <a lass="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">国债
+                    <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu mymenu">
+                      <li><a>美国十年期国债</a></li>
+                        <li><a>德国十年期国债</a></li>
+                        <li><a>英国十年期国债</a></li>
+                         <li><a>意大利十年期国债</a></li>
+                         <li><a>日本十年期国债</a></li>
+                         <li><a>俄罗斯十年期国债</a></li>
+                         <li><a>更多</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">外汇
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a>欧元兑美元</a></li>
+                    <li><a>英镑兑美元</a></li>
+                    <li><a>美元兑日元</a></li>
+                    <li><a>瑞郎兑美元</a></li>
+                    <li><a>更多</a></li>
+                </ul>
+                </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">其他
+                </a>
+                <ul class="dropdown-menu">
+                <li><a>比特币</a></li>
+                <li><a>红酒</a></li>
+                <li><a>钻石</a></li>
+                <li><a>艺术品</a></li>
+                </ul>
+                </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">全球市场    
+                </a>
+                <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">北美洲
+                    <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a><span class="ceFlags USA">&nbsp;</span></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>    
+                    </ul>
+                    </li>
+                 <li class="dropdown-submenu">
+                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">南美洲
+                     <span class="arrow"></span></a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>    
+                    </ul>
+                    </li>
+                   <li class="dropdown-submenu">
+                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">欧洲
+                     <span class="arrow"></span></a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>    
+                    </ul>
+                    </li>
+                 <li class="dropdown-submenu">
+                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">大洋洲
+                     <span class="arrow"></span></a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>    
+                    </ul>
+                    </li>
+                 <li class="dropdown-submenu">
+                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">非洲
+                     <span class="arrow"></span>                     </a>
+                    <ul class="dropdown-menu mymenu">
+                    <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>    
+                    </ul>     
+                    </li>    
+                </ul>
+                </li>    
+            </ul>
+       <form class="navbar-form navbar-left" role="search" method="post" action="">
+        <div class="form-group">
+           <input type="text" class="form-control" style = "width:480px" placeholder = "如：EURUSD" id = 'searchinput'>
+            <div id="search">
+                    {% if user.is_authenticated %}
+                    <div class="groupheader divlastsearch">近期搜索</div>
+                   <div class="divlastsearch">
+                    <table>
+                        <tbody class="lastsearch">
+
+                        </tbody>
+                    </table>
+                   </div>
+                {% endif %}
+                <div class="symbol">
+                    <table>
+                        <tbody id="symbolname">
+
+                        </tbody>
+                    </table>
+                </div>
+                    <div class="groupheader">热门搜索</div>
+                <table></table>
+            </div>
+        </div>
+         <button type="submit" class="btn btn-default">搜索</button>    
+        </form>
+        <ul class="nav navbar-nav navbar-right" id="ullogin">
+		{% if user.is_authenticated %}
+			<li><a id="loginname">{{user.username}}</a></li>
+			<li><a id="mylogout">退出</a></li>
+		{% else %}
+       <li id="mylogin"> <a data-toggle="modal" data-target="#login" id="loginnav">
+		   <span class="glyphicon glyphicon-log-in"></span>登陆</a></li>
+			<li id="myregister"><a data-toggle="modal" data-target="#register" id="registernav"><span class="glyphicon glyphicon-user"></span>注册</a></li>
+		{% endif %}
+            </ul>
+       </div>
+        </div>
+    </nav>   
+    <body>
+		 <div id="login" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-body">
+                    <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                    </button>
+                    </div>
+                <div class="modal-title"><h1 class="text-center">登录</h1></div>   
+                    <div class="modal-body">
+                    <form class="form-group" action="" id="loginform" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">
+                        用户名
+                        </label>
+                        <input class="form-control" type="text" placeholder="" id="loginuser">
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                        密码
+                        </label>
+                        <input class="form-control" type="password" placeholder="" id="loginpassword">
+                    </div>
+                    <div class="text-right">
+                <button id="login" class="btn btn-primary" type="submit" id="loginsubmit">提交
+                </button>
+                    <button class="btn btn-danger" data-dismiss="modal">
+                            取消
+                    </button>  
+                    </div>
+                    <a data-toggle="modal" data-dismiss="modal" data-target="#register">未有账号？点我注册</a>    
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>	
+		<div id="register" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class-title="modal-title">
+                        <h1 class="text-center">注册</h1>
+                    </div>
+                    <div class="modal-body">
+                    <form class="form-group" method="post" action="" id="registerform">
+						{% csrf_token %}
+                        <div class="form-group">
+                            <label for="">用户名</label>
+                            <input class="form-control" type="text" placeholder="6-15位字符" id="registerusername">
+                        </div>
+                        <div class="form-group">
+                            <label for="">密码</label>
+                            <input class="form-control" id="password1" type="password" placeholder="6-15位数字">
+                        </div>
+                        <div class="form-group">
+                            <label for="">确认密码</label>
+                            <input class="form-control" id="password2" type="password" placeholder="">
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-primary" type="submit">提交
+                            </button>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                            取消
+                            </button>
+                        </div>
+                        <a data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% block chart %}
+	{% endblock %}
+<script>
+	var csrftoken = getCookie('csrftoken');
+	//注册
+	$(document).ready(
+	 function(){$("#registerform").submit(function(e){
+		 function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));}
+    $.ajaxSetup({
+		async:false,
+        beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+})
+	 var username = $("#registerusername").val();
+	 var password1 = $("#password1").val();
+	 var password2 = $("#password2").val();
+	 if ($('.msg').length>0)
+            {$('.msg').remove();}
+         if (username.length < 3)
+             {$('#registerusername').after("<span class='msg'>用户名必须3个字符以上</span>");}
+         if (password1.length < 6)
+             {$('#password1').after("<span class='msg'>密码必须6个字符以上</span>");}
+         if (password1 != password2)
+             {$('#password2').after("<span class='msg'>密码必须一致</span>");}
+        if(username.length >= 3 && password1.length >= 6 && password1==password2) 
+	{$.post("{% url 'register' %}",{'username':username,'password1':password1,'password2':password2},function(data){
+		if(data['code'] == 6005)
+		{
+			window.location.reload()
+		}
+		 if (data['code'] == 6000)
+			 {$('#registerusername').after("<span class='msg'>用户已存在</span>");}
+	 });}
+		 
+		 e.preventDefault();
+	 });}
+	);
+	//-------------登录
+	$(document).ready(function(){$("#loginform").submit(function(e){function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));}
+    $.ajaxSetup({
+		async:true,
+                error:function(xhr){alert(xhr.responseText);},
+        beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+})
+	var username = 	$("#loginuser").val();
+	var password = $("#loginpassword").val();
+        if ($('.msg').length>0)
+            {$('.msg').remove();}
+        if (username.length < 3)
+            {$('#loginuser').after("<span class='msg'>用户名必须3个字符以上</span>")}
+        if (password.length < 6)
+            {$('#loginpassword').after("<span class='msg'>密码必须6个字符以上</span>")}
+        if (username.length >=3 && password.length >=6)
+	{$.post("{% url 'login' %}",{'username':username,'password':password},function(data){
+               if (data['code'] == 6003)
+		{
+			window.location.reload();
+		}
+                else if (data['code'] == 6001)
+                    {$('#loginuser').after("<sapn class='msg'>" + data['username'] + "</span>");}
+                else
+                    {$('#loginpassword').after("<sapn class='msg'>" + data['password'] + "</span>");}
+		});};
+		 e.preventDefault();
+})})
+	//----------登出
+	
+    $(document).ready(function(){$("#mylogout").click(function(){$.get("{% url 'logout' %}",function(data){window.location.reload();})})})
+		
+	</script>
+    <script>
+        var csrftoken = getCookie('csrftoken');
+        $(document).ready(function () {
+            $('#searchinput').on('click',function (e) {
+                $('#search').css('visibility','visible');
+                if($('#loginname').length > 0)
+                {   var user = $('#loginname').text();
+                    $.get("{% url 'show_search' %}",{'user':user},function (datas) {
+                        $('.lastsearch').empty();
+                        if (datas['data'].length > 0)
+                        {
+                            for (var i = 0,l = datas['data'].length;i<l;i++) {
+
+                            $('.lastsearch').append($("<tr><td class='first'><li></li></td>" + "<td class='second'>" + datas['data'][i].code + "</td>" + "<td class='third'>" + datas['data'][i].company + "</td>"+"<td class='last'>" + datas['data'][i].country + "</td></tr>"))
+                        }
+                    }})
+                }
+                e.stopPropagation();
+                $('#search').on('click',function(e){e.stopPropagation();});
+                $(document).on('click',function (e) {
+                    if(e.button===1||e.button===0)
+                    {$('#search').css('visibility','hidden');}
+                });
+            });
+            $('#searchinput').keyup(function () {
+                function csrfSafeMethod(method) {
+                    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));};
+                $.ajaxSetup({
+                    async:false,
+                    beforeSend: function(xhr, settings) {
+                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
+                var input = $('#searchinput').val();
+                $.post("{% url 'search' %}",{'query':input},function (datas) {
+
+                        $('#symbolname').empty();
+                        $('.divlastsearch').css('display','none');
+                        if(input == '')
+                        {$('.divlastsearch').css('display','block');}
+                        else
+                        {for(var i = 0,l=datas['data'].length;i<l;i ++)
+
+                        {
+                            $('#symbolname').append($(datas['data'][i]));
+
+                        }}
+
+                    });
+            });
+            $('.lastsearch').on('click','tr',function (e) {
+                var code = $(this).find('td.second').text();
+                var country = $(this).find('td.last').text();
+                window.location.href = "http://127.0.0.1:8000/kchart/stock/" + code + '-' + country;
+                e.stopPropagation();
+            });
+            $('#symbolname').on('click','tr',function(e){
+                function csrfSafeMethod(method) {
+                    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));};
+                $.ajaxSetup({
+                    async:false,
+                    beforeSend: function(xhr, settings) {
+                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
+
+                if($('#loginname').length && $('#loginname').length>0)
+                {   $(this).remove();
+                    $('.lastsearch').prepend($(this).clone());
+                    var user = $('#loginname').text();
+                    var code = $(this).find('td.second').text();
+                    var company = $(this).find('td.third').text();
+                    var country = $(this).find('td.last').text();
+                    $.post("{% url 'save_search' %}",{'user':user,'code':code,'company':company,'country':country},function () {
+
+                    });
+                    window.location.href = "http://127.0.0.1:8000/kchart/stock/" + code + '-' + country;
+                }
+                e.stopPropagation();
+
+            });
+        });
+
+    </script>
+	</body>
+</html>

@@ -1,0 +1,1273 @@
+{% extends 'home.html' %}
+{% block chart %}
+<div id="summary">
+	<h3 style="text-align: center">{{company}}简介</h3>
+	<div class="doubleLineSeperator2" style="width: 600px"></div>
+	<div class="overviewDataTable">
+     <div class="inlineblock">
+		 <span class="float_lang_base1">行业</span>
+		 <span class="float_lang_base2"><a href="">建筑服务</a></span>
+		</div>
+		<div class="inlineblock"> <span>员工</span>
+		  <span class="float_lang_base2">352</span></div>
+		<div class="inlineblock"><span class="float_lang_base1">股票代码</span><span class="float_lang_base2">{{code}}</span></div>
+		<div class="inlineblock"><span class="float_lang_base1">交易所</span><span class="float_lang_base2">HKX</span></div>
+	   <div class="inlineblock"><span class="float_lang_base1">电话</span><span class="float_lang_base2">+852-27960960
+      </span></div>
+		<div class="inlineblock"><span class="float_lang_base1">官网</span><span class="float_lang_base2">www.vantageholdings.com
+      </span></div>
+			        </div>
+	<div class="doubleLineSeperator2" style="width: 600px"></div>
+	        
+	</div>
+<section>
+<div>
+    <h1>{{company}}</h1>
+</div>
+    <div class = 'left'>
+        <div>箭头</div>
+        <div class="inlineblock"></div>
+
+    </div>
+<div id="main" style="width: 600px;height:371px;padding: 4px 0;" class="center"></div>
+<div class="doubleLineSeperator"></div>
+<div class="overviewDataTable">
+	<div class="first inlineblock"><span class="float_lang_base1">昨收</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">每日幅度</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">营业额</span><span class="float_lang_base2"></span></div>
+	<div class="first inlineblock"><span class="float_lang_base1">开盘</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">52周范围</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">每股收益</span><span class="float_lang_base2"></span></div>
+	<div class="first inlineblock"><span class="float_lang_base1">成交量</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">市值</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">红利</span><span class="float_lang_base2"></span></div>
+	<div class="first inlineblock"><span class="float_lang_base1">市盈率</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">一年涨跌幅</span><span class="float_lang_base2"></span></div>
+	<div class="inlineblock"><span class="float_lang_base1">发行股份</span><span class="float_lang_base2"></span></div>
+</div>
+<div class="doubleLineSeperator"></div>
+<div class="instrumentHeader">
+	<h2 style="font-size:22px;">资产负债表</h2>
+	</div>
+<div class="doubleLineSeperator2"></div>
+	<div class="float_lang_base1">
+	<a class="newBtn toggleButton LightGray" id="YB">年度</a>
+	<a class="newBtn toggleButton LightGray toggled last" id="QB">季度</a>
+	<div></div>
+	</div>
+	<div class="clear"></div>
+	<hr/>
+<div id="rrtable">
+	<table class="genTbl reportTbl">
+    <tbody><tr class="alignBottom" id="header_row">
+			  <th><span class="lightgrayFont arial_11 noBold">截止:</span></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+
+             </tr>
+        
+    </tbody><tbody>
+        <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">流动资产合计<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="b-0-0">-</td>
+        <td id="b-0-1">-</td>
+        <td id="b-0-2">-</td>
+        <td id="b-0-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">现金和短期投资</span></td>
+        <td id="b-1-0">-</td>
+        <td id="b-1-1">-</td>
+        <td id="b-1-2">-</td>
+        <td id="b-1-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">现金</span></td>
+        <td id="b-2-0">-</td>
+        <td id="b-2-1">-</td>
+        <td id="b-2-2">-</td>
+        <td id="b-2-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">现金和现金等价物</span></td>
+        <td id="b-3-0">-</td>
+        <td id="b-3-1">-</td>
+        <td id="b-3-2">-</td>
+        <td id="b-3-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">短期投资</span></td>
+        <td id="b-4-0">-</td>
+        <td id="b-4-1">-</td>
+        <td id="b-4-2">-</td>
+        <td id="b-4-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">净应收款合计</span></td>
+        <td id="b-5-0">-</td>
+        <td id="b-5-1">-</td>
+        <td id="b-5-2">-</td>
+        <td id="b-5-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">净交易应收款合计</span></td>
+        <td id="b-6-0">-</td>
+        <td id="b-6-1">-</td>
+        <td id="b-6-2">-</td>
+        <td id="b-6-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">库存合计</span></td>
+        <td id="b-7-0">-</td>
+        <td id="b-7-1">-</td>
+        <td id="b-7-2">-</td>
+        <td id="b-7-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">预付费用</span></td>
+        <td id="b-8-0">-</td>
+        <td id="b-8-1">-</td>
+        <td id="b-8-2">-</td>
+        <td id="b-8-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他流动资产合计</span></td>
+        <td id="b-9-0">-</td>
+        <td id="b-9-1">-</td>
+        <td id="b-9-2">-</td>
+        <td id="b-9-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">总资产<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="b-10-0">-</td>
+        <td id="b-10-1">-</td>
+        <td id="b-10-2">-</td>
+        <td id="b-10-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">物业/厂房/设备净总额</span></td>
+        <td id="b-11-0">-</td>
+        <td id="b-11-1">-</td>
+        <td id="b-11-2">-</td>
+        <td id="b-11-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">物业/厂房/设备总额</span></td>
+        <td id="b-12-0">-</td>
+        <td id="b-12-1">-</td>
+        <td id="b-12-2">-</td>
+        <td id="b-12-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">累计折旧合计</span></td>
+        <td id="b-13-0">-</td>
+        <td id="b-13-1">-</td>
+        <td id="b-13-2">-</td>
+        <td id="b-13-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">商誉净额</span></td>
+        <td id="b-14-0">-</td>
+        <td id="b-14-1">-</td>
+        <td id="b-14-2">-</td>
+        <td id="b-14-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">无形资产净额</span></td>
+        <td id="b-15-0">-</td>
+        <td id="b-15-1">-</td>
+        <td id="b-15-2">-</td>
+        <td id="b-15-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">长期投资</span></td>
+        <td id="b-16-0">-</td>
+        <td id="b-16-1">-</td>
+        <td id="b-16-2">-</td>
+        <td id="b-16-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">长期应收票据</span></td>
+        <td id="b-17-0">-</td>
+        <td id="b-17-1">-</td>
+        <td id="b-17-2">-</td>
+        <td id="b-17-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">其他长期资产合计</span></td>
+        <td id="b-18-0">-</td>
+        <td id="b-18-1">-</td>
+        <td id="b-18-2">-</td>
+        <td id="b-18-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他资产合计</span></td>
+        <td id="b-19-0">-</td>
+        <td id="b-19-1">-</td>
+        <td id="b-19-2">-</td>
+        <td id="b-19-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">总流动负债<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="b-20-0">-</td>
+        <td id="b-20-1">-</td>
+        <td id="b-20-2">-</td>
+        <td id="b-20-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">应付账款</span></td>
+        <td id="b-21-0">-</td>
+        <td id="b-21-1">-</td>
+        <td id="b-21-2">-</td>
+        <td id="b-21-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">应付/应计</span></td>
+        <td id="b-22-0">-</td>
+        <td id="b-22-1">-</td>
+        <td id="b-22-2">-</td>
+        <td id="b-22-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">应计费用</span></td>
+        <td id="b-23-0">-</td>
+        <td id="b-23-1">-</td>
+        <td id="b-23-2">-</td>
+        <td id="b-23-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">应付票据/短期债务</span></td>
+        <td id="b-24-0">-</td>
+        <td id="b-24-1">-</td>
+        <td id="b-24-2">-</td>
+        <td id="b-24-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">长期负债当前应收部分/资本租赁</span></td>
+        <td id="b-25-0">-</td>
+        <td id="b-25-1">-</td>
+        <td id="b-25-2">-</td>
+        <td id="b-25-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他流动负债合计</span></td>
+        <td id="b-26-0">-</td>
+        <td id="b-26-1">-</td>
+        <td id="b-26-2">-</td>
+        <td id="b-26-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">总负债<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="b-27-0">-</td>
+        <td id="b-27-1">-</td>
+        <td id="b-27-2">-</td>
+        <td id="b-27-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">长期债务合计</span></td>
+        <td id="b-28-0">-</td>
+        <td id="b-28-1">-</td>
+        <td id="b-28-2">-</td>
+        <td id="b-28-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">长期债务</span></td>
+        <td id="b-29-0">-</td>
+        <td id="b-29-1">-</td>
+        <td id="b-29-2">-</td>
+        <td id="b-29-3">-</td>
+    </tr>            <tr class="child grand">
+        <td><span class="">资本租赁债务</span></td>
+        <td id="b-30-0">-</td>
+        <td id="b-30-1">-</td>
+        <td id="b-30-2">-</td>
+        <td id="b-30-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">总债务</span></td>
+        <td id="b-31-0">-</td>
+        <td id="b-31-1">-</td>
+        <td id="b-31-2">-</td>
+        <td id="b-31-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">递延所得税</span></td>
+        <td id="b-32-0">-</td>
+        <td id="b-32-1">-</td>
+        <td id="b-32-2">-</td>
+        <td id="b-32-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">少数股东权益</span></td>
+        <td id="b-33-0">-</td>
+        <td id="b-33-1">-</td>
+        <td id="b-33-2">-</td>
+        <td id="b-33-3">-</td>
+    </tr>           <tr class="child last">
+        <td><span class="">其他负债合计</span></td>
+        <td id="b-34-0">-</td>
+        <td id="b-34-1">-</td>
+        <td id="b-34-2">-</td>
+        <td id="b-34-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">总权益<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="b-35-0">-</td>
+        <td id="b-35-1">-</td>
+        <td id="b-35-2">-</td>
+        <td id="b-35-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">可赎回优先股合计</span></td>
+        <td id="b-36-0">-</td>
+        <td id="b-36-1">-</td>
+        <td id="b-36-2">-</td>
+        <td id="b-36-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">不可赎回优先股净额</span></td>
+        <td id="b-37-0">-</td>
+        <td id="b-37-1">-</td>
+        <td id="b-37-2">-</td>
+        <td id="b-37-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">普通股合计</span></td>
+        <td id="b-38-0">-</td>
+        <td id="b-38-1">-</td>
+        <td id="b-38-2">-</td>
+        <td id="b-38-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">资本公积</span></td>
+        <td id="b-39-0">-</td>
+        <td id="b-39-1">-</td>
+        <td id="b-39-2">-</td>
+        <td id="b-39-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">保留盈余（累计亏损）</span></td>
+        <td id="b-40-0">-</td>
+        <td id="b-40-1">-</td>
+        <td id="b-40-2">-</td>
+        <td id="b-40-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">普通库存股</span></td>
+        <td id="b-41-0">-</td>
+        <td id="b-41-1">-</td>
+        <td id="b-41-2">-</td>
+        <td id="b-41-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">员工持股计划债务担保</span></td>
+        <td id="b-42-0">-</td>
+        <td id="b-42-1">-</td>
+        <td id="b-42-2">-</td>
+        <td id="b-42-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">未实现收益（亏损）</span></td>
+        <td id="b-43-0"></td>
+        <td id="b-43-1"></td>
+        <td id="b-43-2"></td>
+        <td id="b-43-3"></td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他权益合计</span></td>
+        <td id="b-44-0"></td>
+        <td id="b-44-1"></td>
+        <td id="b-44-2"></td>
+        <td id="b-44-3"></td>
+    </tr></tbody></table></div></td></tr>            <tr>
+        <td><span class=" bold">负债及股东权益总计</span></td>
+        <td id="b-45-0"></td>
+        <td id="b-45-1"></td>
+        <td id="b-45-2"></td>
+        <td id="b-45-3"></td>
+    </tr>            <tr>
+        <td><span class=" bold">已发行普通股合计</span></td>
+        <td id="b-46-0">-</td>
+        <td id="b-46-1">-</td>
+        <td id="b-46-2">-</td>
+        <td id="b-46-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">已发行优先股合计</span></td>
+        <td id="b-47-0">-</td>
+        <td id="b-47-1">-</td>
+        <td id="b-47-2">-</td>
+        <td id="b-47-3">-</td>
+    </tr>
+		</tbody>
+</table>
+	</div>
+	<div class="doubleLineSeperator"></div>
+<div class="instrumentHeader">
+	<h2 style="font-size:22px;">利润表</h2>
+	</div>
+<div class="doubleLineSeperator2"></div>
+	<div class="float_lang_base1">
+	<a href="javascript:void(0)" class="newBtn toggleButton LightGray" id="YI">年度</a>
+	<a href="javascript:void(0)" class="newBtn toggleButton LightGray toggled last" id="QI">季度</a>
+	<div></div>
+	</div>
+	<div class="clear"></div>
+	<hr/>
+<div id="rrtable">
+    <table class="genTbl reportTbl">
+    <tbody><tr class="alignBottom" id="header_row">
+			  <th><span class="lightgrayFont arial_11 noBold">截止:</span></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+
+             </tr>
+        
+    </tbody><tbody>
+        <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">总收入<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="i-0-0">-</td>
+        <td id="i-0-1">-</td>
+        <td id="i-0-2">-</td>
+        <td id="i-0-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">收入</span></td>
+        <td id="i-1-0">-</td>
+        <td id="i-1-1">-</td>
+        <td id="i-1-2">-</td>
+        <td id="i-1-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他收入合计</span></td>
+        <td id="i-2-0">-</td>
+        <td id="i-2-1">-</td>
+        <td id="i-2-2">-</td>
+        <td id="i-2-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr>
+        <td><span class="">收入成本合计</span></td>
+        <td id="i-3-0">-</td>
+        <td id="i-3-1">-</td>
+        <td id="i-3-2">-</td>
+        <td id="i-3-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">毛利</span></td>
+        <td id="i-4-0">-</td>
+        <td id="i-4-1">-</td>
+        <td id="i-4-2">-</td>
+        <td id="i-4-3">-</td>
+    </tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">经营开支总额<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="i-5-0">-</td>
+        <td id="i-5-1">-</td>
+        <td id="i-5-2">-</td>
+        <td id="i-5-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">销售/一般/管理 费用合计</span></td>
+        <td id="i-6-0">-</td>
+        <td id="i-6-1">-</td>
+        <td id="i-6-2">-</td>
+        <td id="i-6-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">研发</span></td>
+        <td id="i-7-0">-</td>
+        <td id="i-7-1">-</td>
+        <td id="i-7-2">-</td>
+        <td id="i-7-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">折旧/摊销</span></td>
+        <td id="i-8-0">-</td>
+        <td id="i-8-1">-</td>
+        <td id="i-8-2">-</td>
+        <td id="i-8-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">利息开支（收入）- 营运净额</span></td>
+        <td id="i-9-0">-</td>
+        <td id="i-9-1">-</td>
+        <td id="i-9-2">-</td>
+        <td id="i-9-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">例外开支（收入）</span></td>
+        <td id="i-10-0">-</td>
+        <td id="i-10-1">-</td>
+        <td id="i-10-2">-</td>
+        <td id="i-10-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他运营开支开支总额</span></td>
+        <td id="i-11-0">-</td>
+        <td id="i-11-1">-</td>
+        <td id="i-11-2">-</td>
+        <td id="i-11-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr>
+        <td><span class=" bold">营业收入</span></td>
+        <td id="i-12-0">-</td>
+        <td id="i-12-1">-</td>
+        <td id="i-12-3">-</td>
+        <td id="i-12-4">-</td>
+    </tr>            <tr>
+        <td><span class="">利息收入（开支）- 非营运净额</span></td>
+        <td id="i-13-0">-</td>
+        <td id="i-13-1">-</td>
+        <td id="i-13-2">-</td>
+        <td id="i-13-3">-</td>
+    </tr>            <tr>
+        <td><span class="">出售资产收入（亏损）</span></td>
+        <td id="i-14-0">-</td>
+        <td id="i-14-1">-</td>
+        <td id="i-14-2">-</td>
+        <td id="i-14-3">-</td>
+    </tr>            <tr>
+        <td><span class="">其他，净额</span></td>
+        <td id="i-15-0">-</td>
+        <td id="i-15-1">-</td>
+        <td id="i-15-2">-</td>
+        <td id="i-15-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">税前净收益</span></td>
+        <td id="i-16-0">-</td>
+        <td id="i-16-1">-</td>
+        <td id="i-16-2">-</td>
+        <td id="i-16-3">-</td>
+    </tr>            <tr>
+        <td><span class="">备付所得税</span></td>
+        <td id="i-17-0">-</td>
+        <td id="i-17-1">-</td>
+        <td id="i-17-2">-</td>
+        <td id="i-17-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">税后净收益</span></td>
+        <td id="i-18-0">-</td>
+        <td id="i-18-1">-</td>
+        <td id="i-18-2">-</td>
+        <td id="i-18-3">-</td>
+    </tr>            <tr>
+        <td><span class="">少数股东权益</span></td>
+        <td id="i-19-0">-</td>
+        <td id="i-19-1">-</td>
+        <td id="i-19-2">-</td>
+        <td id="i-19-3">-</td>
+    </tr>            <tr>
+        <td><span class="">附属公司权益</span></td>
+        <td id="i-20-0">-</td>
+        <td id="i-20-1">-</td>
+        <td id="i-20-2">-</td>
+        <td id="i-20-3">-</td>
+    </tr>            <tr>
+        <td><span class="">美国公认会计准则调整</span></td>
+        <td id="i-21-0">-</td>
+        <td id="i-21-1">-</td>
+        <td id="i-21-2">-</td>
+        <td id="i-21-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">计算特殊项目前的净收益</span></td>
+        <td id="i-22-0">-</td>
+        <td id="i-22-1">-</td>
+        <td id="i-22-2">-</td>
+        <td id="i-22-3">-</td>
+    </tr>            <tr>
+        <td><span class="">特殊项目合计</span></td>
+        <td id="i-23-0">-</td>
+        <td id="i-23-1">-</td>
+        <td id="i-23-2">-</td>
+        <td id="i-23-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">净收入</span></td>
+        <td id="i-24-0">-</td>
+        <td id="i-24-1">-</td>
+        <td id="i-24-2">-</td>
+        <td id="i-24-3">-</td>
+    </tr>            <tr>
+        <td><span class="">净收入调整总额</span></td>
+        <td id="i-25-0">-</td>
+        <td id="i-25-1">-</td>
+        <td id="i-25-2">-</td>
+        <td id="i-25-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">扣除特殊项目的普通收入</span></td>
+        <td id="i-26-0">-</td>
+        <td id="i-26-1">-</td>
+        <td id="i-26-2">-</td>
+        <td id="i-26-3">-</td>
+    </tr>            <tr>
+        <td><span class="">摊薄调整</span></td>
+        <td id="i-27-0">-</td>
+        <td id="i-27-1">-</td>
+        <td id="i-27-2">-</td>
+        <td id="i-27-3">-</td>
+    </tr>            <tr>
+        <td><span class="">摊薄净收入</span></td>
+        <td id="i-28-0">-</td>
+        <td id="i-28-1">-</td>
+        <td id="i-28-2">-</td>
+        <td id="i-28-3">-</td>
+    </tr>            <tr>
+        <td><span class="">摊薄加权平均股</span></td>
+        <td id="i-29-0">-</td>
+        <td id="i-29-1">-</td>
+        <td id="i-29-2">-</td>
+        <td id="i-29-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">扣除特殊项目的摊薄每股盈利</span></td>
+        <td id="i-30-0">-</td>
+        <td id="i-30-1">-</td>
+        <td id="i-30-2">-</td>
+        <td id="i-30-3">-</td>
+    </tr>            <tr>
+        <td><span class="">每股股利 – 普通股首次发行</span></td>
+        <td id="i-31-0">-</td>
+        <td id="i-31-1">-</td>
+        <td id="i-31-2">-</td>
+        <td id="i-31-3">-</td>
+    </tr>            <tr>
+        <td><span class="">摊薄每股标准盈利</span></td>
+        <td id="i-32-0">-</td>
+        <td id="i-32-1">-</td>
+        <td id="i-32-2">-</td>
+        <td id="i-32-3">-</td>
+    </tr>            </tbody>
+
+</table>
+</div>
+	<div class="doubleLineSeperator"></div>
+<div class="instrumentHeader">
+	<h2 style="font-size:22px;">现金流量表</h2>
+	</div>
+<div class="doubleLineSeperator2"></div>
+	<div class="float_lang_base1">
+	<a class="newBtn toggleButton LightGray" id="YC">年度</a>
+	<a class="newBtn toggleButton LightGray toggled last" id="QC">季度</a>
+	<div></div>
+	</div>
+	<div class="clear"></div>
+	<hr/>
+<div id="rrtable">
+    <table class="genTbl reportTbl">
+    <tbody><tr class="alignBottom" id="header_row">
+			  <th><span class="lightgrayFont arial_11 noBold">截止:</span></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+                 <th><span class="bold">-</span><div class="noBold arial_11">-</div></th>
+
+             </tr>
+        <tr class="secondRow" id="cas_added_row">
+        <th><span class="arial_11 noBold lightgrayFont">周期长度:</span></th>
+        <th><span class="noBold lightgrayFont">3 个月</span></th>
+        <th><span class="noBold lightgrayFont">12 个月</span></th>
+        <th><span class="noBold lightgrayFont">9 个月</span></th>
+        <th><span class="noBold lightgrayFont">6 个月</span></th>
+    </tr>
+            
+    </tbody><tbody>
+        <tr>
+        <td><span class=" bold">净收益/起点</span></td>
+        <td id="c-0-0">-</td>
+        <td id="c-0-1">-</td>
+        <td id="c-0-2">-</td>
+        <td id="c-0-3">-</td>
+    </tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">来自经营活动的现金<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="c-1-0">-</td>
+        <td id="c-1-1">-</td>
+        <td id="c-1-2">-</td>
+        <td id="c-1-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">折旧/递耗</span></td>
+        <td id="c-2-0">-</td>
+        <td id="c-2-1">-</td>
+        <td id="c-2-2">-</td>
+        <td id="c-2-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">摊销</span></td>
+        <td id="c-3-0">-</td>
+        <td id="c-3-1">-</td>
+        <td id="c-3-2">-</td>
+        <td id="c-3-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">递延税</span></td>
+        <td id="c-4-0">-</td>
+        <td id="c-4-1">-</td>
+        <td id="c-4-2">-</td>
+        <td id="c-4-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">非现金项目</span></td>
+        <td id="c-5-0">-</td>
+        <td id="c-5-1">-</td>
+        <td id="c-5-2">-</td>
+        <td id="c-5-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">现金收入</span></td>
+        <td id="c-6-0">-</td>
+        <td id="c-6-1">-</td>
+        <td id="c-6-2">-</td>
+        <td id="c-6-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">现金支出</span></td>
+        <td id="c-7-0">-</td>
+        <td id="c-7-1">-</td>
+        <td id="c-7-2">-</td>
+        <td id="c-7-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">现金税金支出</span></td>
+        <td id="c-8-0">-</td>
+        <td id="c-8-1">-</td>
+        <td id="c-8-2">-</td>
+        <td id="c-8-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">现金利息支出</span></td>
+        <td id="c-9-0">-</td>
+        <td id="c-9-1">-</td>
+        <td id="c-9-2">-</td>
+        <td id="c-9-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">营运资金变动</span></td>
+        <td id="c-10-0">-</td>
+        <td id="c-10-1">-</td>
+        <td id="c-10-2">-</td>
+        <td id="c-10-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">来自投资活动的现金<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="c-11-0">-</td>
+        <td id="c-11-1">-</td>
+        <td id="c-11-2">-</td>
+        <td id="c-11-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">资本支出</span></td>
+        <td id="c-12-0">-</td>
+        <td id="c-12-1">-</td>
+        <td id="c-12-2">-</td>
+        <td id="c-12-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">其他投资现金流项目合计</span></td>
+        <td id="c-13-0">-</td>
+        <td id="c-13-1">-</td>
+        <td id="c-13-2">-</td>
+        <td id="c-13-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr class="openTr pointer" id="parentTr">
+        <td><span class=" bold">来自融资活动的现金<span class="dropDownArrowLightGray"></span></span></td>
+        <td id="c-14-0">-</td>
+        <td id="c-14-1">-</td>
+        <td id="c-14-2">-</td>
+        <td id="c-14-3">-</td>
+    </tr><tr class="noHover" id="childTr"><td colspan="5" class="innerTD"><div><table class="genTbl reportTbl"><tbody>            <tr class="child">
+        <td><span class="">融资现金流项目</span></td>
+        <td id="c-15-0">-</td>
+        <td id="c-15-1">-</td>
+        <td id="c-15-2">-</td>
+        <td id="c-15-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">发放现金红利合计</span></td>
+        <td id="c-16-0">-</td>
+        <td id="c-16-1">-</td>
+        <td id="c-16-2">-</td>
+        <td id="c-16-3">-</td>
+    </tr>            <tr class="child">
+        <td><span class="">股票发行（赎回）净额</span></td>
+        <td id="c-17-0">-</td>
+        <td id="c-17-1">-</td>
+        <td id="c-17-2">-</td>
+        <td id="c-17-3">-</td>
+    </tr>            <tr class="child last">
+        <td><span class="">债务发行（赎回）净额</span></td>
+        <td id="c-18-0">-</td>
+        <td id="c-18-1">-</td>
+        <td id="c-18-2">-</td>
+        <td id="c-18-3">-</td>
+    </tr></tbody></table></div></td></tr>            <tr>
+        <td><span class="">外汇影响</span></td>
+        <td id="c-19-0">-</td>
+        <td id="c-19-1">-</td>
+        <td id="c-19-2">-</td>
+        <td id="c-19-3">-</td>
+    </tr>            <tr>
+        <td><span class=" bold">现金变动净额</span></td>
+        <td id="c-20-0">-</td>
+        <td id="c-20-1">-</td>
+        <td id="c-20-2">-</td>
+        <td id="c-20-3">-</td>
+    </tr></tbody>
+
+</table>
+</div>
+
+</section>
+<script type = "text/javascript">
+if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+              ? args[number]
+              : match
+            ;
+        });
+    };
+}
+
+var mychart = echarts.init(document.getElementById('main'));
+var sw1 = true;
+var sw2 = true;
+var sw3 = true;
+function getDate(rawData){return rawData['price'].map(function (item) {
+    return item[0];
+});}
+function getStock(rawData){return rawData['price'].map(function (item) {
+    return [item[2], item[1], item[4], item[3]];
+})}
+function getVolume(rawData) {
+    volume = rawData['volumes'];
+    return volume;
+}
+function calculateMA(dayCount,data){ var result = [];
+    for (var i = 0, len = data.length; i < len; i++) {
+        if (i < dayCount) {
+            result.push('-');
+            continue;
+        }
+        var sum = 0;
+        for (var j = 0; j < dayCount; j++) {
+            sum += data[i - j][1];
+        }
+        result.push(sum / dayCount);
+    }
+    return result;}
+function show(reportType)
+	{
+		var data = sessionStorage.getItem('data');
+		if (data)
+			{
+				var datas = JSON.parse(data);
+				var timeKeys = [];
+				var balabce = datas['balance'];//资产负债表数据
+	            var income = datas['income'];
+	            var cash = datas['cash'];
+				for (timeKey in balabce[reportType])
+		          {
+			        timeKeys.push(timeKey); 
+			       }
+				for (var i=0;i<4;i++)
+		          {
+			 $('#header_row > th:nth-child({0}) > span'.format(i+2)).html(timeKeys[i].split(' ')[0]);
+			 $('#header_row > th:nth-child({0}) > div'.format(i+2)).html(timeKeys[i].split(' ')[1]);
+		 }
+				for (var i = 0;i<4;i++)
+	              {   $('#b-0-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["流动资产合计"]);
+		$('#b-1-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金和短期投资"]);
+		$('#b-2-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金"]);
+		$('#b-3-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金和现金等价物"]);
+		$('#b-4-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["短期投资"]);
+		$('#b-5-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["净应收款合计"]);
+		$('#b-6-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["净交易应收款合计"]);
+		$('#b-7-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["库存合计"]);
+		$('#b-8-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["预付费用"]);
+		$('#b-9-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他流动资产合计"]);
+		$('#b-10-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总资产"]);
+		$('#b-11-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["物业/厂房/设备净总额"]);
+		$('#b-12-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["物业/厂房/设备总额"]);
+		$('#b-13-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["累计折旧合计"]);
+		$('#b-14-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["商誉净额"]);
+		$('#b-15-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["无形资产净额"]);
+		$('#b-16-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期投资"]);
+		$('#b-17-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期应收票据"]);
+		$('#b-18-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他长期资产合计"]);
+		$('#b-19-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他资产合计"]);
+		$('#b-20-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总流动负债"]);
+		$('#b-21-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付账款"]);
+		$('#b-22-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付/应计"]);
+		$('#b-23-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应计费用"]);
+		$('#b-24-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付票据/短期债务"]);
+		$('#b-25-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期负债当前应收部分/资本租赁"]);
+		$('#b-26-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他流动负债合计"]);
+		$('#b-27-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总负债"]);
+		$('#b-28-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期债务合计"]);
+		$('#b-29-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期债务"]);
+		$('#b-30-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["资本租赁债务"]);
+		$('#b-31-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总债务"]);
+		$('#b-32-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["递延所得税"]);
+		$('#b-33-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["少数股东权益"]);
+		$('#b-34-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他负债合计"]);
+		$('#b-35-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总权益"]);
+		$('#b-36-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["可赎回优先股合计"]);
+		$('#b-37-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["不可赎回优先股净额"]);
+		$('#b-38-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["普通股合计"]);
+		$('#b-39-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["资本公积"]);
+		$('#b-40-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["保留盈余（累计亏损"]);
+		$('#b-41-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["普通库存股"]);
+		$('#b-42-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["员工持股计划债务担保"]);
+		$('#b-43-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["未实现收益（亏损）"]);
+		$('#b-44-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他权益合计"]);
+		$('#b-45-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["负债及股东权益总计"]);
+		$('#b-46-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["已发行普通股合计"]);
+		$('#b-47-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["已发行优先股合计"]);
+	 //利润表
+		$('#i-0-{0}'.format(i)).html(income[reportType][timeKeys[i]]["总收入"]);
+		$('#i-1-{0}'.format(i)).html(income[reportType][timeKeys[i]]["收入"]);
+		$('#i-2-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他收入合计"]);
+		$('#i-3-{0}'.format(i)).html(income[reportType][timeKeys[i]]["收入成本合计"]);
+		$('#i-4-{0}'.format(i)).html(income[reportType][timeKeys[i]]["毛利"]);
+	    $('#i-5-{0}'.format(i)).html(income[reportType][timeKeys[i]]["经营开支总额"]);
+	    $('#i-6-{0}'.format(i)).html(income[reportType][timeKeys[i]]["销售/一般/管理 费用合计"]);
+	    $('#i-7-{0}'.format(i)).html(income[reportType][timeKeys[i]]["研发"]);
+	    $('#i-8-{0}'.format(i)).html(income[reportType][timeKeys[i]]["折旧/摊销"]);
+	    $('#i-9-{0}'.format(i)).html(income[reportType][timeKeys[i]]["利息开支（收入）- 营运净额"]);
+	    $('#i-10-{0}'.format(i)).html(income[reportType][timeKeys[i]]["例外开支（收入"]);
+	    $('#i-11-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他运营开支开支总额"]);
+	    $('#i-12-{0}'.format(i)).html(income[reportType][timeKeys[i]]["营业收入"]);
+	    $('#i-13-{0}'.format(i)).html(income[reportType][timeKeys[i]]["利息收入（开支）- 非营运净额"]);
+	    $('#i-14-{0}'.format(i)).html(income[reportType][timeKeys[i]]["出售资产收入（亏损）"]);
+	    $('#i-15-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他，净额"]);
+	    $('#i-16-{0}'.format(i)).html(income[reportType][timeKeys[i]]["税前净收益"]);
+	    $('#i-17-{0}'.format(i)).html(income[reportType][timeKeys[i]]["备付所得税"]);
+	    $('#i-18-{0}'.format(i)).html(income[reportType][timeKeys[i]]["税后净收益"]);
+	    $('#i-19-{0}'.format(i)).html(income[reportType][timeKeys[i]]["少数股东权益"]);
+	    $('#i-20-{0}'.format(i)).html(income[reportType][timeKeys[i]]["附属公司权益"]);
+	    $('#i-21-{0}'.format(i)).html(income[reportType][timeKeys[i]]["美国公认会计准则调整"]);
+	    $('#i-22-{0}'.format(i)).html(income[reportType][timeKeys[i]]["计算特殊项目前的净收益"]);
+	    $('#i-23-{0}'.format(i)).html(income[reportType][timeKeys[i]]["特殊项目合计"]);
+	    $('#i-24-{0}'.format(i)).html(income[reportType][timeKeys[i]]["净收入"]);
+	    $('#i-25-{0}'.format(i)).html(income[reportType][timeKeys[i]]["净收入调整总额"]);
+	    $('#i-26-{0}'.format(i)).html(income[reportType][timeKeys[i]]["扣除特殊项目的普通收入"]);
+	    $('#i-27-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄调整"]);
+	    $('#i-28-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄净收入"]);
+	    $('#i-29-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄加权平均股"]);
+	    $('#i-30-{0}'.format(i)).html(income[reportType][timeKeys[i]]["扣除特殊项目的摊薄每股盈利"]);
+	    $('#i-31-{0}'.format(i)).html(income[reportType][timeKeys[i]]["每股股利 – 普通股首次发行"]);
+	    $('#i-32-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄每股标准盈利"]);
+	  //
+	    $('#c-0-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["净收益/起点"]);
+	    $('#c-1-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自经营活动的现金"]);
+	    $('#c-2-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["折旧/递耗"]);
+	    $('#c-3-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["摊销"]);
+	    $('#c-4-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["递延税"]);
+	    $('#c-5-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["非现金项目"]);
+	    $('#c-6-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金收入"]);
+	    $('#c-7-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金支出"]);
+	    $('#c-8-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金税金支出"]);
+	    $('#c-9-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金利息支出"]);
+	    $('#c-10-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["营运资金变动"]);
+	    $('#c-11-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自投资活动的现金"]);
+	    $('#c-12-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["资本支出"]);
+	    $('#c-13-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["其他投资现金流项目合计"]);
+	    $('#c-14-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自融资活动的现金"]);
+	    $('#c-15-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["融资现金流项目"]);
+	    $('#c-16-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["发放现金红利合计"]);
+	    $('#c-17-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["股票发行（赎回）净额"]);
+	    $('#c-18-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["债务发行（赎回）净额"]);
+	    $('#c-19-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["外汇影响"]);
+	    $('#c-20-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金变动净额"]);
+	      
+	}
+			}
+	}
+function showBalance(reportType)
+	{
+		{
+		var data = sessionStorage.getItem('data');
+		if (data)
+			{
+				var datas = JSON.parse(data);
+				var timeKeys = [];
+				var balabce = datas['balance'];//资产负债表数据
+				for (timeKey in balabce[reportType])
+		          {
+			        timeKeys.push(timeKey); 
+			       }
+				for (var i=0;i<4;i++)
+		          {
+			 $('#header_row > th:nth-child({0}) > span'.format(i+2)).html(timeKeys[i].split(' ')[0]);
+			 $('#header_row > th:nth-child({0}) > div'.format(i+2)).html(timeKeys[i].split(' ')[1]);
+		 }
+				for (var i = 0;i<4;i++)
+	              {   $('#b-0-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["流动资产合计"]);
+		$('#b-1-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金和短期投资"]);
+		$('#b-2-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金"]);
+		$('#b-3-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["现金和现金等价物"]);
+		$('#b-4-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["短期投资"]);
+		$('#b-5-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["净应收款合计"]);
+		$('#b-6-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["净交易应收款合计"]);
+		$('#b-7-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["库存合计"]);
+		$('#b-8-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["预付费用"]);
+		$('#b-9-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他流动资产合计"]);
+		$('#b-10-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总资产"]);
+		$('#b-11-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["物业/厂房/设备净总额"]);
+		$('#b-12-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["物业/厂房/设备总额"]);
+		$('#b-13-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["累计折旧合计"]);
+		$('#b-14-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["商誉净额"]);
+		$('#b-15-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["无形资产净额"]);
+		$('#b-16-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期投资"]);
+		$('#b-17-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期应收票据"]);
+		$('#b-18-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他长期资产合计"]);
+		$('#b-19-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他资产合计"]);
+		$('#b-20-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总流动负债"]);
+		$('#b-21-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付账款"]);
+		$('#b-22-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付/应计"]);
+		$('#b-23-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应计费用"]);
+		$('#b-24-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["应付票据/短期债务"]);
+		$('#b-25-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期负债当前应收部分/资本租赁"]);
+		$('#b-26-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他流动负债合计"]);
+		$('#b-27-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总负债"]);
+		$('#b-28-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期债务合计"]);
+		$('#b-29-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["长期债务"]);
+		$('#b-30-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["资本租赁债务"]);
+		$('#b-31-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总债务"]);
+		$('#b-32-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["递延所得税"]);
+		$('#b-33-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["少数股东权益"]);
+		$('#b-34-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他负债合计"]);
+		$('#b-35-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["总权益"]);
+		$('#b-36-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["可赎回优先股合计"]);
+		$('#b-37-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["不可赎回优先股净额"]);
+		$('#b-38-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["普通股合计"]);
+		$('#b-39-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["资本公积"]);
+		$('#b-40-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["保留盈余（累计亏损"]);
+		$('#b-41-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["普通库存股"]);
+		$('#b-42-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["员工持股计划债务担保"]);
+		$('#b-43-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["未实现收益（亏损）"]);
+		$('#b-44-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["其他权益合计"]);
+		$('#b-45-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["负债及股东权益总计"]);
+		$('#b-46-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["已发行普通股合计"]);
+		$('#b-47-{0}'.format(i)).html(balabce[reportType][timeKeys[i]]["已发行优先股合计"]);
+	      
+	}
+			}
+	}
+	}
+function showIncome(reportType)
+	{
+		var data = sessionStorage.getItem('data');
+		if (data)
+			{
+				var datas = JSON.parse(data);
+				var timeKeys = [];
+	            var income = datas['income'];
+				for (timeKey in income[reportType])
+		          {
+			        timeKeys.push(timeKey); 
+			       }
+				for (var i=0;i<4;i++)
+		          {
+			 $('#header_row > th:nth-child({0}) > span'.format(i+2)).html(timeKeys[i].split(' ')[0]);
+			 $('#header_row > th:nth-child({0}) > div'.format(i+2)).html(timeKeys[i].split(' ')[1]);
+		 }
+				for (var i = 0;i<4;i++)
+	              { 
+		$('#i-0-{0}'.format(i)).html(income[reportType][timeKeys[i]]["总收入"]);
+		$('#i-1-{0}'.format(i)).html(income[reportType][timeKeys[i]]["收入"]);
+		$('#i-2-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他收入合计"]);
+		$('#i-3-{0}'.format(i)).html(income[reportType][timeKeys[i]]["收入成本合计"]);
+		$('#i-4-{0}'.format(i)).html(income[reportType][timeKeys[i]]["毛利"]);
+	    $('#i-5-{0}'.format(i)).html(income[reportType][timeKeys[i]]["经营开支总额"]);
+	    $('#i-6-{0}'.format(i)).html(income[reportType][timeKeys[i]]["销售/一般/管理 费用合计"]);
+	    $('#i-7-{0}'.format(i)).html(income[reportType][timeKeys[i]]["研发"]);
+	    $('#i-8-{0}'.format(i)).html(income[reportType][timeKeys[i]]["折旧/摊销"]);
+	    $('#i-9-{0}'.format(i)).html(income[reportType][timeKeys[i]]["利息开支（收入）- 营运净额"]);
+	    $('#i-10-{0}'.format(i)).html(income[reportType][timeKeys[i]]["例外开支（收入"]);
+	    $('#i-11-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他运营开支开支总额"]);
+	    $('#i-12-{0}'.format(i)).html(income[reportType][timeKeys[i]]["营业收入"]);
+	    $('#i-13-{0}'.format(i)).html(income[reportType][timeKeys[i]]["利息收入（开支）- 非营运净额"]);
+	    $('#i-14-{0}'.format(i)).html(income[reportType][timeKeys[i]]["出售资产收入（亏损）"]);
+	    $('#i-15-{0}'.format(i)).html(income[reportType][timeKeys[i]]["其他，净额"]);
+	    $('#i-16-{0}'.format(i)).html(income[reportType][timeKeys[i]]["税前净收益"]);
+	    $('#i-17-{0}'.format(i)).html(income[reportType][timeKeys[i]]["备付所得税"]);
+	    $('#i-18-{0}'.format(i)).html(income[reportType][timeKeys[i]]["税后净收益"]);
+	    $('#i-19-{0}'.format(i)).html(income[reportType][timeKeys[i]]["少数股东权益"]);
+	    $('#i-20-{0}'.format(i)).html(income[reportType][timeKeys[i]]["附属公司权益"]);
+	    $('#i-21-{0}'.format(i)).html(income[reportType][timeKeys[i]]["美国公认会计准则调整"]);
+	    $('#i-22-{0}'.format(i)).html(income[reportType][timeKeys[i]]["计算特殊项目前的净收益"]);
+	    $('#i-23-{0}'.format(i)).html(income[reportType][timeKeys[i]]["特殊项目合计"]);
+	    $('#i-24-{0}'.format(i)).html(income[reportType][timeKeys[i]]["净收入"]);
+	    $('#i-25-{0}'.format(i)).html(income[reportType][timeKeys[i]]["净收入调整总额"]);
+	    $('#i-26-{0}'.format(i)).html(income[reportType][timeKeys[i]]["扣除特殊项目的普通收入"]);
+	    $('#i-27-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄调整"]);
+	    $('#i-28-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄净收入"]);
+	    $('#i-29-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄加权平均股"]);
+	    $('#i-30-{0}'.format(i)).html(income[reportType][timeKeys[i]]["扣除特殊项目的摊薄每股盈利"]);
+	    $('#i-31-{0}'.format(i)).html(income[reportType][timeKeys[i]]["每股股利 – 普通股首次发行"]);
+	    $('#i-32-{0}'.format(i)).html(income[reportType][timeKeys[i]]["摊薄每股标准盈利"]);
+	      
+	}
+			}
+	}
+function showCash(reportType)
+	{
+		var data = sessionStorage.getItem('data');
+		if (data)
+			{
+				var datas = JSON.parse(data);
+				var timeKeys = [];
+	            var cash = datas['cash'];
+				for (timeKey in cash[reportType])
+		          {
+			        timeKeys.push(timeKey); 
+			       }
+				for (var i=0;i<4;i++)
+		          {
+			 $('#header_row > th:nth-child({0}) > span'.format(i+2)).html(timeKeys[i].split(' ')[0]);
+			 $('#header_row > th:nth-child({0}) > div'.format(i+2)).html(timeKeys[i].split(' ')[1]);
+		 }
+				for (var i = 0;i<4;i++)
+	              {
+	    $('#c-0-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["净收益/起点"]);
+	    $('#c-1-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自经营活动的现金"]);
+	    $('#c-2-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["折旧/递耗"]);
+	    $('#c-3-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["摊销"]);
+	    $('#c-4-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["递延税"]);
+	    $('#c-5-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["非现金项目"]);
+	    $('#c-6-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金收入"]);
+	    $('#c-7-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金支出"]);
+	    $('#c-8-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金税金支出"]);
+	    $('#c-9-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金利息支出"]);
+	    $('#c-10-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["营运资金变动"]);
+	    $('#c-11-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自投资活动的现金"]);
+	    $('#c-12-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["资本支出"]);
+	    $('#c-13-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["其他投资现金流项目合计"]);
+	    $('#c-14-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["来自融资活动的现金"]);
+	    $('#c-15-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["融资现金流项目"]);
+	    $('#c-16-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["发放现金红利合计"]);
+	    $('#c-17-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["股票发行（赎回）净额"]);
+	    $('#c-18-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["债务发行（赎回）净额"]);
+	    $('#c-19-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["外汇影响"]);
+	    $('#c-20-{0}'.format(i)).html(cash[reportType][timeKeys[i]]["现金变动净额"]);
+	      
+	}
+			}
+	}
+$(document).ready(function (){
+	$('#YB').click(function (){
+		if (sw1)
+		{  
+			showBalance('年度');
+			$('#YB').addClass('toggled');
+			$('#QB').removeClass('toggled');
+			sw1 = false;
+		};
+	});
+	$('#QB').click(function (){
+		if (sw1 === false)
+			{
+				showBalance('季度');
+				$('#QB').addClass('toggled');
+				$('#YB').removeClass('toggled');
+				sw1 = true;
+			}
+	});
+	$('#YI').click(function(){
+		if(sw2)
+			{
+				showIncome('年度');
+				$('#YI').addClass('toggled');
+				$('#QI').removeClass('toggled');
+				sw2 = false;
+			}
+	});
+	$('#QI').click(function(){
+		if(sw2 === false)
+			{
+				showIncome('季度');
+				$('#QI').addClass('toggled');
+				$('#YI').removeClass('toggled');
+				sw2 = true;
+			}
+	});
+	$('#YC').click(function(){
+		if (sw3)
+			{
+				showCash('年度');
+				$('#YC').addClass('toggled');
+				$('#QC').removeClass('toggled');
+				sw3 = false;
+			}
+	})
+	$('#QC').click(function(){
+		if (sw3 === false)
+			{
+				showCash('季度');
+				$('#QC').addClass('toggled');
+				$('#YC').removeClass('toggled');
+				sw3 = true;
+			}
+	})
+})
+//获取服务器数据
+$(document).ready(function () {
+    $.get("{% url 'chart' %}",{'countryname':'{{country}}','code':'{{code }}'}).done(function (datas){
+	var stockdata = getStock(datas);
+	var v = getVolume(datas);
+	var balabce = datas['balance'];//资产负债表数据
+	var income = datas['income'];
+	var cash = datas['cash'];
+	$('body > section > div.overviewDataTable > div:nth-child(1) > span.float_lang_base2').html(stockdata[stockdata.length - 1][1]);
+	//填季度资产负债表
+	//填入时间
+	sessionStorage.setItem('data',JSON.stringify(datas));
+	show('季度');
+    mychart.setOption(
+		option = {
+	backgroundColor:"#21202D",
+	visualMap: {
+            seriesIndex: 11,
+            dimension: 2,
+            pieces: [{
+                value: 1,
+                color: '#c23531'
+            }, {
+                value: -1,
+                color: '#2f4554'
+            }]
+        },
+	//图例
+	legend:{
+		data:['日K','周K','月K','小时','15分钟','5分钟','1分钟','MA10', 'MA20', 'MA30'],
+		inactiveColor:"#777",
+		textStyle:{color:'#fff'},
+		selected:{'周K':false,'月K':false,'小时':false,'15分钟':false,'5分钟':false,'1分钟':false}
+	},
+	tooltip:{//提示框
+		trigger:'axis',
+		animation:false,//动画
+		type:'cross',
+		lineStyle:{color: '#376df4',width: 2,opacity: 1}
+	},
+	axisPointer: {
+            link: {xAxisIndex: 'all'},
+            label: {
+                backgroundColor: '#777'
+            }
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: true
+                },
+                brush: {
+                    type: ['lineX', 'clear']
+                }
+            }
+        },
+	xAxis:[{type:'category',data:getDate(datas),axisline:{lineStyle: { color: '#8392A5' }}},{type:'category',data:getDate(datas),gridIndex: 1,boundaryGap : false}],
+	yAxis:[{scale: true,axisLine: { lineStyle: { color: '#8392A5' } },splitLine: { show: false }},{scale: true,gridIndex: 1,axisLine: { lineStyle: { color: '#8392A5' },show:false},splitLine: { show: false }}],
+	grid:[{bottom:'30%',width:'80%'},
+          {left: '10%',
+           right: '8%',
+           top: '75%',
+           height: '15%',width:'80%'},
+         ],
+       
+	dataZoom:[{
+        textStyle: {
+            color: '#8392A5'
+        },
+        top:'93%',
+        type: 'slider',
+        xAxisIndex:[0,1],
+        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+        handleSize: '80%',
+        dataBackground: {
+            areaStyle: {
+                color: '#8392A5'
+            },
+            lineStyle: {
+                opacity: 0.8,
+                color: '#8392A5'
+            }
+        },
+        handleStyle: {
+            color: '#fff',
+            shadowBlur: 3,
+            shadowColor: 'rgba(0, 0, 0, 0.6)',
+            shadowOffsetX: 2,
+            shadowOffsetY: 2
+        }
+    }, {type:'inside',xAxisIndex:[0,1],}],//区域缩放
+	animation: false,
+	series:[
+		
+		{type:'candlestick',name:'日K',data:getStock(datas),itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'周K',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'月K',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'小时',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'15分钟',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'5分钟',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'candlestick',name:'1分钟',data:[],itemStyle:{normal:{color:'#FD1050',color0:'#0CF49B', borderColor: '#FD1050',borderColor0: '#0CF49B'}}},
+		
+		{type:'line',name:'MA10',data:[],smooth: true,showSymbol: false,lineStyle: {normal: {width:1}}},
+		
+		{type:'line',name:'MA15',data:[],smooth: true,showSymbol: false,lineStyle: {normal: {width:1}}},
+		
+		{type:'line',name:'MA20',data:[],smooth: true,showSymbol: false,lineStyle: {normal: {width:1}}},
+		
+		{type:'line',name:'MA30',data:[],smooth: true,showSymbol: false,lineStyle: {normal: {width:1}}},
+       {type:'bar',name:'Volume',data:getVolume(datas),xAxisIndex:1,yAxisIndex:1}
+	]
+},true
+)
+})
+})
+
+</script>
+
+{% endblock%}
